@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages";
+import Overview from "./pages/overview";
+import Gallery from "./pages/gallery";
+import Wallet from "./pages/wallet";
+import WalletHistory from "./pages/walletHistory";
+import Payment from "./pages/payment";
+import IPFS from "./pages/IPFS";
+import Api from "./pages/api";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Overview" component={Overview} />
+        <Route exact path="/Gallery" component={Gallery} />
+        <Route exact path="/Wallet" component={Wallet} />
+        <Route exact path="/WalletHistory" component={WalletHistory} />
+        <Route exact path="/Payment" component={Payment} />
+        <Route exact path="/IPFS" component={IPFS} />
+      </Router>
+    </>
   );
 }
-
-export default App;
